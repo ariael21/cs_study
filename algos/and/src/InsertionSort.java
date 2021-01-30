@@ -22,7 +22,9 @@ public class InsertionSort {
                     array[j-1] = array[j];
                     array[j] = prev;
                 }
-                else break;
+                else {
+                    break;
+                }
             }
         }
         return array;
