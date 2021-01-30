@@ -40,3 +40,25 @@ out/
 ##############################
 .vscode/
 .code-workspace
+
+
+##############################
+## LaTeX
+##############################
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+/docs/**/*.log
+
+*.fdb_latexmk
+*.synctex.gz
+
