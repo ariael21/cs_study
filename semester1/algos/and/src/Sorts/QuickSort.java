@@ -15,9 +15,9 @@ public class QuickSort {
         if(array.length <= 1) return;
         if(low < high) {
             int mid = Partition(array, low, high);
-    
-            QSort(array, 0, mid-1); // watchout: pivot is max element => max != mid /!\
-            QSort(array, mid, high);
+
+            QSort(array, low, mid-1); // watchout: pivot is max element => max != mid /!\
+            QSort(array, mid+1, high);
         }
     }
 
