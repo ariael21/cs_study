@@ -18,8 +18,12 @@ public class Kruskal {
         UnionFind uf = new UnionFind(graph.n);
 
         // sorted edges needed for kruskal
-        Arrays.sort(graph.edges);
-        
+        Arrays.sort(graph.edges, new Comparator<Edge>() {
+            public int compare(Edge o1, Edge o2) {
+                return o1.w - o2.w;
+            }
+        });
+
         int cost = 0;
 
         for(Edge edge : graph.edges) {

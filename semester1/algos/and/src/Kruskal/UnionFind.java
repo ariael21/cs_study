@@ -46,7 +46,7 @@ public class UnionFind {
             label = labels[x];
         }
 
-        // reset lable for all members of members1
+        // reset label for all members of members1
         for(int val : members1) {
             labels[val] = label;
         }
