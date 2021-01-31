@@ -13,14 +13,14 @@ public class SolveGrid {
                         {2, 11, 15, 8}, 
                         {3, 6, 4, 9}};
 
-        System.out.println("expected: 11\n" + "output: "+ solveGrid(grid));
+        System.out.println("expected: 11\noutput: "+ solveGrid(grid));
 
         int[][] grid2 = {{8, 9, 3, 5},
                         {10, 7, 12, 4},
                         {15, 14, 6, 16},
                         {11, 1, 13, 2},};
 
-        System.out.println("expected: 14\n" + "output: "+ solveGrid(grid2));
+        System.out.println("expected: 14\noutput: "+ solveGrid(grid2));
     }
 
 

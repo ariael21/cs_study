@@ -1,3 +1,5 @@
+package DP;
+
 public class Max_Expression {
     public static void main(String[] args) {
         // sample input
@@ -5,9 +7,7 @@ public class Max_Expression {
         char[] operator = {'+', '*','*','+'};
         int max = maximizing_an_expression(5, operand, operator);
 
-        System.out.println("4 + -2 * 6 * 1 + 5 => (4 + -2) * 6 * (1 + 5)");
-        System.out.println("expected: 72 ");
-        System.out.println("output: " + max);
+        System.out.println("expected: 72\noutput: " + max);
     }
 
     private static int maximizing_an_expression(int n, int[] Operand, char[] Operator)
