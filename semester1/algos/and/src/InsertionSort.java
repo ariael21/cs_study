@@ -8,19 +8,14 @@ public class InsertionSort {
         for(int num:arr) {
             System.out.print(num +", ");
         }
-        
     }
 
     public static int[] Sort(int [] array) {
-        int prev;
-
         for(int i = 1; i < array.length; i++) {
             for(int j = i; j > 0; j--) {
 
                 if(array[j] < array[j-1]) {
-                    prev = array[j-1];
-                    array[j-1] = array[j];
-                    array[j] = prev;
+                    swap(j-1, j, array);
                 }
                 else {
                     break;
@@ -28,5 +23,11 @@ public class InsertionSort {
             }
         }
         return array;
+    }
+
+    public static void swap(int i, int j, int[] arr) {
+        int prev = arr[j];
+        arr[j] = arr[i];
+        arr[i] = prev;
     }
 }
