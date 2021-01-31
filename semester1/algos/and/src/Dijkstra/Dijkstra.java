@@ -43,17 +43,15 @@ public class Dijkstra {
      * @param g graph
      * @param v start vertex
      */
-    public static void Dijkstra(Graph g, int v) {
+    public static int[] Dijkstra(Graph g, int v) {
         int[] shortestPaths = new int[g.n];
         int[] prev = new int[g.n];
         boolean[] checked = new boolean[g.n];
 
         for(int i = 0; i < g.n; i++) {
-            prev[i] = Integer.MAX_VALUE;
-            shortestPaths[i] = Integer.MAX_VALUE;
+            //prev[i] = Integer.MAX_VALUE;
+            //shortestPaths[i] = Integer.MAX_VALUE;
         }
-        prev[v] = -1;
-        shortestPaths[v] = 0;
 
         PriorityQueue<Pair> priorityQueue = new PriorityQueue<>();
         priorityQueue.add(new Pair(v, 0));
@@ -76,7 +74,6 @@ public class Dijkstra {
             }
         }
 
-        System.out.println(Arrays.toString(prev));
-        System.out.println(Arrays.toString(shortestPaths));
+        return shortestPaths;
     }
 }
