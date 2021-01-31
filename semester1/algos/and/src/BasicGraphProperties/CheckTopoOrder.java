@@ -1,7 +1,7 @@
 package BasicGraphProperties;
 
 public class CheckTopoOrder {
-    public boolean CheckTopoOrder(int array[], Graph g) {
+    public boolean checkTopoOrder(int array[], Graph g) {
         boolean[] checked = new boolean[g.n];
         
         for(int i = 0; i < array.length; i++) {

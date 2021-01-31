@@ -6,21 +6,21 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] array = { 1, 6 , 3, 7, 2, 192, -23, 5};
 
-        MSort(array, 0, array.length-1);
+        mSort(array, 0, array.length - 1);
 
         System.out.println(Arrays.toString(array));
     }
 
-    public static void MSort(int[] array, int left, int right) {
-        if(left != right) {
+    public static void mSort(int[] array, int left, int right) {
+        if (left != right) {
             int mid = (left + right) / 2;
-            MSort(array, left, mid);
-            MSort(array, mid + 1, right);
-            Merge(array, left, mid + 1, right);
+            mSort(array, left, mid);
+            mSort(array, mid + 1, right);
+            merge(array, left, mid + 1, right);
         }
     }
 
-    public static void Merge(int[] array, int left, int mid, int right) {
+    public static void merge(int[] array, int left, int mid, int right) {
         int[] temp = new int[array.length];
         int l = left;
         int m = mid;

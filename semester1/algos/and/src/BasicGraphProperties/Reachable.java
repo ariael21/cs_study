@@ -10,11 +10,11 @@ public class Reachable {
         int[] edgeToArray =   {1,7,3,2,5,4,3,3,1,2,8,7,9,8,0,7,2,3,1,8,4,1,8,2,8};
         Graph graph = new Graph(10, 25, edgeFromArray, edgeToArray);
 
-        System.out.println(ExistsPath(0, 9, graph) + " expected: false");
-        System.out.println(ExistsPath(0, 3, graph) + " expected: true");
+        System.out.println(existsPath(0, 9, graph) + " expected: false");
+        System.out.println(existsPath(0, 3, graph) + " expected: true");
     }
 
-    public static boolean ExistsPath(int u, int v, Graph g) {
+    public static boolean existsPath(int u, int v, Graph g) {
         // BFS form u, to check if path exists to v
         boolean[] checked = new boolean[g.n];
         LinkedList<Integer> queue = new LinkedList<>();

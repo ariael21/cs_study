@@ -1,6 +1,5 @@
 package Dijkstra;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 import WeightedGraph.Graph;
@@ -33,7 +32,7 @@ public class Dijkstra {
         Graph graph = new Graph(10,20, sampleData);
 
         for(int i = 0; i < 10; i++) {
-            Dijkstra(graph, i);
+            dijkstra(graph, i);
         }
     }
 
@@ -43,15 +42,10 @@ public class Dijkstra {
      * @param g graph
      * @param v start vertex
      */
-    public static int[] Dijkstra(Graph g, int v) {
+    public static int[] dijkstra(Graph g, int v) {
         int[] shortestPaths = new int[g.n];
         int[] prev = new int[g.n];
         boolean[] checked = new boolean[g.n];
-
-        for(int i = 0; i < g.n; i++) {
-            //prev[i] = Integer.MAX_VALUE;
-            //shortestPaths[i] = Integer.MAX_VALUE;
-        }
 
         PriorityQueue<Pair> priorityQueue = new PriorityQueue<>();
         priorityQueue.add(new Pair(v, 0));
@@ -61,13 +55,13 @@ public class Dijkstra {
             Pair current = priorityQueue.poll();
 
             if(!checked[current.index]) {
-                
                 checked[current.index] = true;
+                shortestPaths[current.index] = current.value;
+
                 for(int i = 0; i < g.degrees[current.index]; i++) {
                     if(!checked[g.edges[current.index][i]]) {
                         priorityQueue.add(new Pair(g.edges[current.index][i], g.weights[current.index][i] + current.value));
 
-                        shortestPaths[g.edges[current.index][i]] = g.weights[current.index][i] + current.value;
                         prev[g.edges[current.index][i]] = current.index;
                     }
                 }

@@ -6,13 +6,13 @@ public class InsertionSort {
         // sample input
         int[] arr = {1, 4, 3, 7, 2, 12, 0, -3};
 
-        Sort(arr);
+        sort(arr);
         for(int num:arr) {
             System.out.print(num +", ");
         }
     }
 
-    public static int[] Sort(int [] array) {
+    public static int[] sort(int [] array) {
         for(int i = 1; i < array.length; i++) {
             for(int j = i; j > 0; j--) {
 

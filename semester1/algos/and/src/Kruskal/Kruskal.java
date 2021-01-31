@@ -11,10 +11,10 @@ public class Kruskal {
         EdgeGraph graph = new EdgeGraph(4, 6);
         graph.edges = edges;
 
-        System.out.println(MST(graph));
+        System.out.println(mst(graph));
     }
 
-    public static int MST(EdgeGraph graph) {
+    public static int mst(EdgeGraph graph) {
         UnionFind uf = new UnionFind(graph.n);
 
         // sorted edges needed for kruskal

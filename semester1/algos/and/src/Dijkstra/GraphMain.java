@@ -1,6 +1,7 @@
 package Dijkstra;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -51,7 +52,9 @@ class GraphMain {
           int expected = OUT.nextInt();
           int v = IN.nextInt();
           int u = IN.nextInt();
-          int[] paths = D.Dijkstra(G, v);
+          int[] paths = D.dijkstra(G, v);
+
+          System.out.println(Arrays.toString(paths));
 
           int output = paths[u];
           System.out.println("("+i+") Expected:        "+expected);
