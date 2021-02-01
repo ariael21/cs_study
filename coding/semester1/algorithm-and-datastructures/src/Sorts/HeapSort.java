@@ -12,15 +12,17 @@ public class HeapSort {
         int[] heapSorted;
         Arrays.sort(sorted);
 
-        for(int i = 0; i <= 20; i++) {
+        for (int i = 0; i <= 20; i++) {
             randomArray = IntStream.generate(() -> new Random().nextInt(500)).limit(35).toArray();
             sorted = randomArray.clone();
             Arrays.sort(sorted);
 
             heapSorted = heapSort(randomArray);
 
-            if(Arrays.equals(sorted, heapSorted)) System.out.print("\033[0;92m");
-            else System.out.print("\033[0;91m");
+            if (Arrays.equals(sorted, heapSorted))
+                System.out.print("\033[0;92m");
+            else
+                System.out.print("\033[0;91m");
 
             System.out.println("expected: " + Arrays.toString(sorted));
             System.out.println("output:   " + Arrays.toString(heapSorted));
@@ -31,10 +33,10 @@ public class HeapSort {
     public static int[] heapSort(int[] array) {
         int[] sorted = new int[array.length];
 
-        MaxHeap maxHeap = new MaxHeap(array);   // builds heap automatically
-        int index = array.length-1;
+        MaxHeap maxHeap = new MaxHeap(array); // builds heap automatically
+        int index = array.length - 1;
 
-        while(maxHeap.size() > 0) {
+        while (maxHeap.size() > 0) {
             sorted[index] = maxHeap.getMax();
             maxHeap.deleteMax();
             index--;
@@ -52,7 +54,7 @@ class MaxHeap {
     private int array[] = new int[MAX_SIZE];
 
     public MaxHeap(int[] values) {
-        if(values.length <= array.length) {
+        if (values.length <= array.length) {
             array = values;
             n = array.length;
             build();
@@ -111,9 +113,11 @@ class MaxHeap {
 
     public void printHeap() {
         System.out.print("[");
-        for(int i = 0; i < n; i++) {
-            if(i == n-1) System.out.print(array[i]);
-            else System.out.print(array[i] + ", ");
+        for (int i = 0; i < n; i++) {
+            if (i == n - 1)
+                System.out.print(array[i]);
+            else
+                System.out.print(array[i] + ", ");
         }
         System.out.println("]");
     }
