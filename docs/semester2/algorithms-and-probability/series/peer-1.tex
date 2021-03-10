@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{tgadventor}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+    \graphicspath{ {./images/} }
+    \section*{Algorithmen und Wahrscheinlichkeit: Peer 1}
+    Yael Fassbind
+    \section*{Aufgabe 1 - Touren}
+    \subsection*{a) Finden Sie einen minimalen Spannbaum T von G. Begründen Sie Ihre Schritte/Rechnungen genau}
+    Um den MST zu finden wurde Prim's Algorithmus verwendet:
+    \begin{itemize}
+        \item Start bei einem beliebigen Knoten in $G$. Diesen Knoten markiert man als besucht und fügt ihn zum Zusammenhangskomponenten (ZSHK) hinzu.
+        \item Man schaut alle ausgehenden Kanten des ZSHK an, welche noch nicht im MST sind. Von diesen wählt man die Kante mit den geringsten Kosten.
+        \item Die ausgewählte Kante fügt man dem MST hinzu. Der Knoten (welcher über die gewählte Kante erreicht werden kann) wird dem ZSHK hinzugefügt.
+        \item Wiederhole diese Schritte, bis alle Knoten von $G$ im ZSHK sind.
+    \end{itemize}
+    \includegraphics[width=\linewidth]{p1-1}
+
+    \pagebreak
+    \subsection*{b) Bezeichne C das Gewicht von T. Verwenden Sie T um einen Zyklus Z zu finden, der in A beginnt und endet, jeden Knoten von G mindestens einmal besucht und Gewicht höchstens 2C hat}
+    Der MST $T$ von $G$ hat ein Gewicht von C = 30 [Siehe a)]
+    \\\\
+    \textbf{Zyklus Z in G finden:}
+    \begin{itemize}
+        \item Finde MST T in G (siehe a))
+        \item Verdopple alle Kanten von T $\Rightarrow$ T'\\
+        \linebreak
+        \includegraphics[width=200pt]{p1-2}
+        \item Finden die Eulertour E in T'\\
+        \linebreak
+        \includegraphics[width=250pt]{p1-3}
+        \item Kürze E, indem man Konten die mehrfach besucht werden überspringt. Dazu wird die Dreiecksungleichung verwendet.\\
+        \\ 
+        Dreiecksungleichung: $c(x,z) \le c(x,y) + c(y,z)$\\
+        \linebreak
+        \includegraphics[width=400pt]{p1-4}
+    \end{itemize}
+    Daraus folgt das Gewicht von $Z$ folgendermassen:\\
+    $Z \le 3 + 4 + 2 + 10 + 5 + 20 + 16$\\
+    $Z \le 60 = 2 * 30 = 2 * C$\\
+    $\Rightarrow Z \le 2 * C$
+    
+    \pagebreak
+    \subsection*{c) Beweisen Sie, dass jeder Zyklus Z, der jeden Knoten mindestens einmal besucht, mindestens Gewicht C hat.}
+    Wir haben Graph $G = (V, E)$, dessen MST mit Gewicht $C$ und ein Zyklus $Z$ der alle Knoten von $G$ mindestens einmal besucht.\\
+    \\
+    Das Gewicht des MST von $G$ ist genau $C$. Daher sind die minimalen Kosten um alle Knoten zu erreichen genau $C$. Desswegen wird jeder andere Weg der alle Knoten besucht \textbf{mindestens $C$ Kosten.}\\
+    \\
+    Wenn man von $Z$ eine beliebige Kante $e \in E$ entfernt, wird Z zu einem Pfad welcher alle Knoten von $G$ mindestens einmal besucht. Dieser hat mindestens Kosten $C$ (entsprechend der vorherigen Argumentation), folgendermassen \textbf{hat $Z$ auch mindestens Kosten $C$.}
+
+\end{document}

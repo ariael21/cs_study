@@ -42,6 +42,27 @@
     G heisst zusammenhängend, wenn $\forall u,v \in V, u \neq v$ gilt: es gibt einen u-v-Pfad in G.
 \end{tcolorbox}
 
+\begin{tcolorbox}[title=Definition]
+    Sei $G = (V,E)$ ein Graph. $u,v \in V, und  X \subseteq V \backslash {u,v}$
+
+    X heisst , wenn u und v in verschiedenen Zusammen-hangskomponenten von $G[V \backslash X]$ liegen. G heisst k-zusammenhängend, wenn gilt:
+
+    \begin{itemize}
+        \item $|V| \geq k + 1$
+        \item $\forall u,v,\in V:$ jeder u-v-Seperator X hat Grösse $|X| \geq k$ 
+    \end{itemize}
+\end{tcolorbox}
+
+Einfache Erklärung: Um einen k-zusammenhängenden Graph zu zerstören, muss man k Knoten löschen.
+\\
+
+\begin{tcolorbox}[title=Definition: Satz von Menger (Knoten)]
+    Sei $G = (V,E)$ ein Graph. $u,v \in V$ dann gilt:
+
+    Jeder u-v-Separator X hat Grösse $|X| \geq k \Longleftrightarrow$ es gibt k intern-knotendisjunkte u-v-Pfade. 
+
+\end{tcolorbox}
+
 
 \subsection*{Glossary}
 bipartie: 
